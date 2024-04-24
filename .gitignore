@@ -40,3 +40,4 @@ out/
 .kotlin
 # Application configuration
 /src/main/resources/application.properties
+application.properties
