@@ -6,6 +6,7 @@ plugins {
 	id 'org.jetbrains.kotlin.jvm' version '1.9.23'
 	id 'org.jetbrains.kotlin.plugin.spring' version '1.9.23'
 	id 'org.jetbrains.kotlin.plugin.jpa' version '1.9.23'
+	kotlin("plugin.spring") version "1.5.31"
 }
 
 group = 'com.chat'
@@ -33,6 +34,8 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.batch:spring-batch-test'
 	testImplementation 'org.springframework.security:spring-security-test'
+	implementation("com.squareup.okhttp3:okhttp:4.9.0")
+	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 
 tasks.withType(KotlinCompile) {
@@ -45,3 +48,10 @@ tasks.withType(KotlinCompile) {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// tasks.withType<Jar> {
+//     manifest {
+//         attributes["Main-Class"] = "com.example.ApplicationKt"
+//     }
+// }
+
